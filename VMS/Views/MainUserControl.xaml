@@ -6,17 +6,54 @@
              xmlns:local="clr-namespace:VMS.Views"
              xmlns:vm="clr-namespace:VMS.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800" Background="Black">
     <UserControl.DataContext>
         <vm:VmsViewModel></vm:VmsViewModel>
     </UserControl.DataContext>
-    <StackPanel>
-        <Label Foreground="{Binding _vmsLista[0].Color}" FontSize="30" Content="{Binding _vmsLista[0].Contenido}"></Label>
-        <Label Foreground="{Binding _vmsLista[1].Color}" FontSize="30" Content="{Binding _vmsLista[1].Contenido}"></Label>
+    <UserControl.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#FF9E9E" 
+                                      ShadowDepth="0"
+                                      BlurRadius="55"></DropShadowEffect>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="Rectangle">
+            <Setter Property="Stroke" Value="#FBD1D1"></Setter>
+            <Setter Property="Height" Value="auto"></Setter>
+            <Setter Property="StrokeThickness" Value="4"/>
+            <Setter Property="RadiusX" Value="10" />
+            <Setter Property="RadiusY" Value="10"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="#FBD1D1"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
+                </Setter.Value>
+                
+            </Setter>
+              
+        </Style>
+    </UserControl.Resources>
+    <Canvas>
+        <Grid Canvas.Left="100" Canvas.Top="100">
+            
+        <Rectangle >
+
+        </Rectangle>
+            <Label Foreground="#FBD1D1" FontSize="30" Content="{Binding _vmsLista[0].Contenido}"></Label>
+        </Grid>
+        <Label Canvas.Left="200" Foreground="{Binding _vmsLista[1].Color}" FontSize="30" Content="{Binding _vmsLista[1].Contenido}">
+            
+        </Label>
         <Label Foreground="{Binding _vmsLista[2].Color}" FontSize="30" Content="{Binding _vmsLista[2].Contenido}"></Label>
         <Label Foreground="{Binding _vmsLista[3].Color}" FontSize="30" Content="{Binding _vmsLista[3].Contenido}"></Label>
         <Label Foreground="{Binding _vmsLista[4].Color}" FontSize="30" Content="{Binding _vmsLista[4].Contenido}"></Label>
         <Label Foreground="{Binding _vmsLista[5].Color}" FontSize="30" Content="{Binding _vmsLista[5].Contenido}"></Label>
         
-    </StackPanel>
+    </Canvas>
 </UserControl>
