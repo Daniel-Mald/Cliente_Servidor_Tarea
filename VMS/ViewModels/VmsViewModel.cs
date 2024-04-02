@@ -22,7 +22,8 @@ namespace VMS.ViewModels
     { "Morado", new string[] { "#932EFF", "#F2E2FF" }},
     { "Azul", new string[] { "#0000FF", "#E2E2FF" }},
     { "Naranja", new string[] { "#FFA500", "#FFE2C6" }},
-    { "Cian", new string[] { "#00FFFF", "#E2FFFF" }}
+    { "Cian", new string[] { "#00FFFF", "#E2FFFF" }},
+    { "Magenta", new string[] { "#FF2EFF", "#FFE2FF" }}
 };
 
         public string IP 
@@ -44,7 +45,14 @@ namespace VMS.ViewModels
 
         private void _server_VmsRecibido(object? sender, VmsDTO e)
         {
+
+            //_vmsLista[e.CartelId] = e;
+            //_vmsLista[e.CartelId].ColorClaro = coloresReales[e.Color][1];
+            //_vmsLista[e.CartelId].Color = coloresReales[e.Color][0];
+            e.ColorClaro = coloresReales[e.Color][1];
+            e.Color = coloresReales[e.Color][0];
             _vmsLista[e.CartelId] = e;
+            
         }
         void LlenarCarteles()
         {
