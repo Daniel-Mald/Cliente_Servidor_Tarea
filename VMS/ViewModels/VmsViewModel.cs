@@ -16,6 +16,15 @@ namespace VMS.ViewModels
         public ObservableCollection<VmsDTO> _vmsLista { get; set; } = new ObservableCollection<VmsDTO>();
         VmsService _server;
         int _numCarteles;
+        private readonly Dictionary<string, string[]> coloresReales = new()
+{
+    { "Rojo", new string[] { "#FF2E2E", "#FFE2E2" }},
+    { "Morado", new string[] { "#932EFF", "#F2E2FF" }},
+    { "Azul", new string[] { "#0000FF", "#E2E2FF" }},
+    { "Naranja", new string[] { "#FFA500", "#FFE2C6" }},
+    { "Cian", new string[] { "#00FFFF", "#E2FFFF" }}
+};
+
         public string IP 
         {
             get
@@ -41,15 +50,19 @@ namespace VMS.ViewModels
         {
             for (int i = 0; i < 5; i++)
             {
+              
                 VmsDTO x = new()
                 {
                     CartelId = i,
-                    Color = "red",
+                    Color = coloresReales["Rojo"][0],
                     Contenido = "jamaica",
-                    Remitente = ""
+                    Remitente = "",
+                    ColorClaro = coloresReales["Rojo"][1]
+                    
                 };
                 _vmsLista.Add(x);
             }
         }
+        
     }
 }

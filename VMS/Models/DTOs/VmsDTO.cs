@@ -12,5 +12,6 @@ namespace VMS.Models.DTOs
         public string Color { get; set; } = "";
         public int CartelId { get; set; }
         public string Remitente { get; set; } = "";
+        public string ColorClaro { get; set; } = "";
     }
 }
