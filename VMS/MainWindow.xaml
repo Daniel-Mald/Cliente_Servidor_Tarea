@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:VMS"
         mc:Ignorable="d"
         xmlns:views="clr-namespace:VMS.Views"
-        Title="MainWindow" Height="450" Width="800">
-    <views:MainUserControl></views:MainUserControl>
+        Title="MainWindow" Height="670" Width="1000"  ResizeMode="NoResize">
+    <Grid>
+        <Image Source="Assets/fondo.png" Stretch="Fill" />
+        <views:MainUserControl></views:MainUserControl>
+    </Grid>
 </Window>

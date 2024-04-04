@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:VMS.Views"
              xmlns:vm="clr-namespace:VMS.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Background="Black">
+             d:DesignHeight="450" d:DesignWidth="800" >
     <UserControl.DataContext>
         <vm:VmsViewModel></vm:VmsViewModel>
     </UserControl.DataContext>
@@ -23,6 +23,7 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Margin" Value="10"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="FontSize" Value="20"/>
 
         </Style>
         <Style TargetType="Rectangle">
@@ -33,106 +34,387 @@
         </Style>
     </UserControl.Resources>
     <Canvas>
-        <Grid Canvas.Left="100" Canvas.Top="100">
+        <Grid Canvas.Left="10" Canvas.Top="10" Height="200" Width="150">
             <Rectangle Stroke="{Binding _vmsLista[0].ColorClaro}">
                 <Rectangle.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[0].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
                 </Rectangle.Effect>
             </Rectangle>
-            <Rectangle Stroke="{Binding _vmsLista[0].Color}" StrokeThickness="4" RadiusX="10" RadiusY="10"></Rectangle>
-            <Label Foreground="{Binding _vmsLista[0].Color}" FontSize="30"  Content="{Binding _vmsLista[0].Contenido}">
-                <Label.Effect>
+            <Rectangle Stroke="{Binding _vmsLista[0].Color}" StrokeThickness="4" RadiusX="10" RadiusY="10">
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[0].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
+                </Rectangle.Effect>
+            </Rectangle>
+            <TextBlock Foreground="{Binding _vmsLista[0].Color}" FontSize="20"  Text="{Binding _vmsLista[0].Contenido}">
+                <TextBlock.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[0].Color}" Direction="0" ShadowDepth="0" BlurRadius="55"/>
                     
-                </Label.Effect>
+                </TextBlock.Effect>
                 
-            </Label>
-            <Label Foreground="{Binding _vmsLista[0].ColorClaro}" FontSize="30" Content="{Binding _vmsLista[0].Contenido}">
-                <Label.Effect>
+            </TextBlock>
+            <TextBlock Foreground="{Binding _vmsLista[0].ColorClaro}" FontSize="20" Text="{Binding _vmsLista[0].Contenido}">
+                <TextBlock.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[0].Color}" Direction="0" ShadowDepth="0" BlurRadius="6"/>
-                </Label.Effect>
-            </Label>
+                </TextBlock.Effect>
+            </TextBlock>
         </Grid>
-        <Grid Canvas.Left="250" Canvas.Top="100">
+        <Grid Canvas.Left="10" Canvas.Top="210" Height="100" Width="150">
             <Rectangle Stroke="{Binding _vmsLista[1].ColorClaro}">
                 <Rectangle.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[1].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
                 </Rectangle.Effect>
             </Rectangle>
-            <Rectangle Stroke="{Binding _vmsLista[1].Color}" StrokeThickness="4" RadiusX="10" RadiusY="10"></Rectangle>
-            <TextBlock Foreground="{Binding _vmsLista[1].Color}" FontSize="30"  Text="{Binding _vmsLista[1].Contenido}">
+            <Rectangle Stroke="{Binding _vmsLista[1].Color}" StrokeThickness="4" RadiusX="10" RadiusY="10">
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[1].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
+                </Rectangle.Effect>
+            </Rectangle>
+            <TextBlock Foreground="{Binding _vmsLista[1].Color}" FontSize="20"  Text="{Binding _vmsLista[1].Contenido}">
                 <TextBlock.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[1].Color}" Direction="0" ShadowDepth="0" BlurRadius="55"/>
 
                 </TextBlock.Effect>
 
             </TextBlock>
-            <Label Foreground="{Binding _vmsLista[1].ColorClaro}" FontSize="30" Content="{Binding _vmsLista[1].Contenido}">
-                <Label.Effect>
+            <TextBlock Foreground="{Binding _vmsLista[1].ColorClaro}"  Text="{Binding _vmsLista[1].Contenido}">
+                <TextBlock.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[1].Color}" Direction="0" ShadowDepth="0" BlurRadius="6"/>
-                </Label.Effect>
-            </Label>
+                </TextBlock.Effect>
+            </TextBlock>
         </Grid>
-        <Grid Canvas.Left="400" Canvas.Top="100">
+        <Grid Canvas.Left="165" Canvas.Top="50" Height="170" Width="125">
             <Rectangle Stroke="{Binding _vmsLista[2].ColorClaro}">
                 <Rectangle.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[2].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
                 </Rectangle.Effect>
             </Rectangle>
-            <Rectangle Stroke="{Binding _vmsLista[2].Color}" StrokeThickness="4" RadiusX="10" RadiusY="10"></Rectangle>
-            <Label Foreground="{Binding _vmsLista[2].Color}" FontSize="30"  Content="{Binding _vmsLista[2].Contenido}">
-                <Label.Effect>
+            <Rectangle Stroke="{Binding _vmsLista[2].Color}" StrokeThickness="4" RadiusX="10" RadiusY="10">
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[2].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
+                </Rectangle.Effect>
+            </Rectangle>
+            <TextBlock Foreground="{Binding _vmsLista[2].Color}"   Text="{Binding _vmsLista[2].Contenido}">
+                <TextBlock.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[2].Color}" Direction="0" ShadowDepth="0" BlurRadius="55"/>
 
-                </Label.Effect>
+                </TextBlock.Effect>
 
-            </Label>
-            <Label Foreground="{Binding _vmsLista[2].ColorClaro}" FontSize="30" Content="{Binding _vmsLista[2].Contenido}">
-                <Label.Effect>
+            </TextBlock>
+            <TextBlock Foreground="{Binding _vmsLista[2].ColorClaro}" Text="{Binding _vmsLista[2].Contenido}">
+                <TextBlock.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[2].Color}" Direction="0" ShadowDepth="0" BlurRadius="6"/>
-                </Label.Effect>
-            </Label>
+                </TextBlock.Effect>
+            </TextBlock>
         </Grid>
-        <Grid Canvas.Left="600" Canvas.Top="100">
+        <Grid Canvas.Left="290" Canvas.Top="50" Height="65" Width="235">
             <Rectangle Stroke="{Binding _vmsLista[3].ColorClaro}">
                 <Rectangle.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[3].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
                 </Rectangle.Effect>
             </Rectangle>
-            <Rectangle Stroke="{Binding _vmsLista[3].Color}" StrokeThickness="4" RadiusX="10" RadiusY="10"></Rectangle>
-            <Label Foreground="{Binding _vmsLista[3].Color}" FontSize="30"  Content="{Binding _vmsLista[3].Contenido}">
-                <Label.Effect>
+            <Rectangle Stroke="{Binding _vmsLista[3].Color}" StrokeThickness="4" RadiusX="10" RadiusY="10">
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[3].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
+                </Rectangle.Effect>
+            </Rectangle>
+            <TextBlock Foreground="{Binding _vmsLista[3].Color}" FontSize="20"  Text="{Binding _vmsLista[3].Contenido}">
+                <TextBlock.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[3].Color}" Direction="0" ShadowDepth="0" BlurRadius="55"/>
 
-                </Label.Effect>
+                </TextBlock.Effect>
 
-            </Label>
-            <Label Foreground="{Binding _vmsLista[3].ColorClaro}" FontSize="30" Content="{Binding _vmsLista[3].Contenido}">
-                <Label.Effect>
+            </TextBlock>
+            <TextBlock Foreground="{Binding _vmsLista[3].ColorClaro}" FontSize="20" Text="{Binding _vmsLista[3].Contenido}">
+                <TextBlock.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[3].Color}" Direction="0" ShadowDepth="0" BlurRadius="6"/>
-                </Label.Effect>
-            </Label>
+                </TextBlock.Effect>
+            </TextBlock>
         </Grid>
-        <Grid Canvas.Left="100" Canvas.Top="200">
+        <Grid Canvas.Left="80" Canvas.Top="360" Height="35" Width="350">
             <Rectangle Stroke="{Binding _vmsLista[4].ColorClaro}">
                 <Rectangle.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[4].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
                 </Rectangle.Effect>
             </Rectangle>
-            <Rectangle Stroke="{Binding _vmsLista[4].Color}" StrokeThickness="4" RadiusX="10" RadiusY="10"></Rectangle>
-            <Label Foreground="{Binding _vmsLista[4].Color}" FontSize="30"  Content="{Binding _vmsLista[4].Contenido}">
-                <Label.Effect>
+            <Rectangle Stroke="{Binding _vmsLista[4].Color}" StrokeThickness="4" RadiusX="10" RadiusY="10">
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[4].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
+                </Rectangle.Effect>
+            </Rectangle>
+            <TextBlock Foreground="{Binding _vmsLista[4].Color}" FontSize="15"  Text="{Binding _vmsLista[4].Contenido}">
+                <TextBlock.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[4].Color}" Direction="0" ShadowDepth="0" BlurRadius="55"/>
 
-                </Label.Effect>
+                </TextBlock.Effect>
 
-            </Label>
-            <Label Foreground="{Binding _vmsLista[4].ColorClaro}" FontSize="30" Content="{Binding _vmsLista[4].Contenido}">
-                <Label.Effect>
+            </TextBlock>
+            <TextBlock Foreground="{Binding _vmsLista[4].ColorClaro}" FontSize="15" Margin="0" Text="{Binding _vmsLista[4].Contenido}">
+                <TextBlock.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[4].Color}" Direction="0" ShadowDepth="0" BlurRadius="6"/>
-                </Label.Effect>
-            </Label>
+                </TextBlock.Effect>
+            </TextBlock>
         </Grid>
+        <Grid Canvas.Left="450" Canvas.Top="250" Height="85" Width="240">
+            <Rectangle Stroke="{Binding _vmsLista[5].ColorClaro}">
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[5].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
+                </Rectangle.Effect>
+            </Rectangle>
+            <Rectangle Stroke="{Binding _vmsLista[5].Color}" StrokeThickness="4" RadiusX="10" RadiusY="10">
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[5].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
+                </Rectangle.Effect>
+            </Rectangle>
+            <TextBlock Foreground="{Binding _vmsLista[5].Color}" FontSize="15"  Text="{Binding _vmsLista[5].Contenido}">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[5].Color}" Direction="0" ShadowDepth="0" BlurRadius="55"/>
+
+                </TextBlock.Effect>
+
+            </TextBlock>
+            <TextBlock Foreground="{Binding _vmsLista[5].ColorClaro}" FontSize="15" Margin="0" Text="{Binding _vmsLista[5].Contenido}">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[5].Color}" Direction="0" ShadowDepth="0" BlurRadius="6"/>
+                </TextBlock.Effect>
+            </TextBlock>
+        </Grid>
+        <Grid Canvas.Left="450" Canvas.Top="405" Height="30" Width="300">
+            <Rectangle Stroke="{Binding _vmsLista[6].ColorClaro}" RadiusX="5" RadiusY="5" StrokeThickness="2">
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[6].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
+                </Rectangle.Effect>
+            </Rectangle>
+            <Rectangle  Stroke="{Binding _vmsLista[6].Color}" StrokeThickness="3" RadiusX="5" RadiusY="5"></Rectangle>
+            <TextBlock Foreground="{Binding _vmsLista[6].Color}" FontSize="13"  Text="{Binding _vmsLista[6].Contenido}">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[6].Color}" Direction="0" ShadowDepth="0" BlurRadius="55"/>
+
+                </TextBlock.Effect>
+
+            </TextBlock>
+            <TextBlock  Foreground="{Binding _vmsLista[6].ColorClaro}" FontSize="13" Margin="0" Text="{Binding _vmsLista[6].Contenido}">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[6].Color}" Direction="0" ShadowDepth="0" BlurRadius="55"/>
+                </TextBlock.Effect>
+            </TextBlock>
+        </Grid>
+        <Grid Canvas.Left="720" Canvas.Top="160" Height="70" Width="145">
+            <Rectangle Stroke="{Binding _vmsLista[7].ColorClaro}">
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[7].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
+                </Rectangle.Effect>
+            </Rectangle>
+            <Rectangle Stroke="{Binding _vmsLista[7].Color}" StrokeThickness="4" RadiusX="10" RadiusY="10">
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[7].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
+                </Rectangle.Effect>
+            </Rectangle>
+            <TextBlock Foreground="{Binding _vmsLista[7].Color}" FontSize="15"  Text="{Binding _vmsLista[7].Contenido}">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[7].Color}" Direction="0" ShadowDepth="0" BlurRadius="55"/>
+
+                </TextBlock.Effect>
+
+            </TextBlock>
+            <TextBlock Foreground="{Binding _vmsLista[7].ColorClaro}" FontSize="15"  Text="{Binding _vmsLista[7].Contenido}">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[7].Color}" Direction="0" ShadowDepth="0" BlurRadius="6"/>
+                </TextBlock.Effect>
+            </TextBlock>
+        </Grid>
+        <Grid Canvas.Left="720" Canvas.Top="240" Height="70" Width="145">
+            <Rectangle Stroke="{Binding _vmsLista[8].ColorClaro}">
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[8].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
+                </Rectangle.Effect>
+            </Rectangle>
+            <Rectangle Stroke="{Binding _vmsLista[8].Color}" StrokeThickness="4" RadiusX="10" RadiusY="10">
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[8].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
+                </Rectangle.Effect>
+            </Rectangle>
+            <TextBlock Foreground="{Binding _vmsLista[8].Color}" FontSize="15"  Text="{Binding _vmsLista[8].Contenido}">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[8].Color}" Direction="0" ShadowDepth="0" BlurRadius="55"/>
+
+                </TextBlock.Effect>
+
+            </TextBlock>
+            <TextBlock Foreground="{Binding _vmsLista[8].ColorClaro}" FontSize="15" Margin="0" Text="{Binding _vmsLista[8].Contenido}">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[8].Color}" Direction="0" ShadowDepth="0" BlurRadius="6"/>
+                </TextBlock.Effect>
+            </TextBlock>
+        </Grid>
+        <Grid Canvas.Left="775" Canvas.Top="320" Height="60" Width="90">
+            <Rectangle Stroke="{Binding _vmsLista[9].ColorClaro}">
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[9].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
+                </Rectangle.Effect>
+            </Rectangle>
+            <Rectangle Stroke="{Binding _vmsLista[9].Color}" StrokeThickness="4" RadiusX="10" RadiusY="10">
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[9].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
+                </Rectangle.Effect>
+            </Rectangle>
+            <TextBlock Foreground="{Binding _vmsLista[9].Color}" FontSize="13"  Text="{Binding _vmsLista[9].Contenido}">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[9].Color}" Direction="0" ShadowDepth="0" BlurRadius="55"/>
+
+                </TextBlock.Effect>
+
+            </TextBlock>
+            <TextBlock Foreground="{Binding _vmsLista[9].ColorClaro}" FontSize="13"  Text="{Binding _vmsLista[9].Contenido}">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[9].Color}" Direction="0" ShadowDepth="0" BlurRadius="79"/>
+                </TextBlock.Effect>
+            </TextBlock>
+        </Grid>
+        <Grid Canvas.Left="890" Canvas.Top="150" Height="240" Width="90">
+            <Rectangle Stroke="{Binding _vmsLista[10].ColorClaro}">
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[10].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
+                </Rectangle.Effect>
+            </Rectangle>
+            <Rectangle Stroke="{Binding _vmsLista[10].Color}" StrokeThickness="4" RadiusX="10" RadiusY="10">
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[10].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
+                </Rectangle.Effect>
+            </Rectangle>
+            <TextBlock Foreground="{Binding _vmsLista[10].Color}" FontSize="13"  Text="{Binding _vmsLista[10].Contenido}">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[10].Color}" Direction="0" ShadowDepth="0" BlurRadius="55"/>
+
+                </TextBlock.Effect>
+
+            </TextBlock>
+            <TextBlock Foreground="{Binding _vmsLista[10].ColorClaro}" FontSize="13"  Text="{Binding _vmsLista[10].Contenido}">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[10].Color}" Direction="0" ShadowDepth="0" BlurRadius="79"/>
+                </TextBlock.Effect>
+            </TextBlock>
+        </Grid>
+        <Grid Canvas.Left="785" Canvas.Top="390" Height="130" Width="200">
+            <Rectangle Stroke="{Binding _vmsLista[9].ColorClaro}">
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[9].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
+                </Rectangle.Effect>
+            </Rectangle>
+            <Rectangle Stroke="{Binding _vmsLista[9].Color}" StrokeThickness="4" RadiusX="10" RadiusY="10">
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[9].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
+                </Rectangle.Effect>
+            </Rectangle>
+            <TextBlock Foreground="{Binding _vmsLista[9].Color}" FontSize="13"  Text="{Binding _vmsLista[9].Contenido}">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[9].Color}" Direction="0" ShadowDepth="0" BlurRadius="55"/>
+
+                </TextBlock.Effect>
+
+            </TextBlock>
+            <TextBlock Foreground="{Binding _vmsLista[9].ColorClaro}" FontSize="13"  Text="{Binding _vmsLista[9].Contenido}">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[9].Color}" Direction="0" ShadowDepth="0" BlurRadius="79"/>
+                </TextBlock.Effect>
+            </TextBlock>
+        </Grid>
+        <Grid Canvas.Left="190" Canvas.Top="395" Height="115" Width="155">
+            <Rectangle Stroke="{Binding _vmsLista[11].ColorClaro}" StrokeThickness="3">
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[11].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
+                </Rectangle.Effect>
+            </Rectangle>
+            <Rectangle Stroke="{Binding _vmsLista[11].ColorClaro}" StrokeThickness="3" RadiusX="10" RadiusY="10">
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[11].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
+                </Rectangle.Effect>
+            </Rectangle>
+            <TextBlock Foreground="{Binding _vmsLista[11].Color}" FontSize="13"  Text="{Binding _vmsLista[11].Contenido}">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[11].Color}" Direction="0" ShadowDepth="0" BlurRadius="55"/>
+
+                </TextBlock.Effect>
+
+            </TextBlock>
+            <TextBlock Foreground="{Binding _vmsLista[11].ColorClaro}" FontSize="13"  Text="{Binding _vmsLista[11].Contenido}">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[11].Color}" Direction="0" ShadowDepth="0" BlurRadius="79"/>
+                </TextBlock.Effect>
+            </TextBlock>
+        </Grid>
+        <Grid Canvas.Left="440" Canvas.Top="440" Height="65" Width="85">
+            <Rectangle Stroke="{Binding _vmsLista[12].ColorClaro}" StrokeThickness="3">
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[12].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
+                </Rectangle.Effect>
+            </Rectangle>
+            <Rectangle Stroke="{Binding _vmsLista[12].Color}" StrokeThickness="3" RadiusX="10" RadiusY="10">
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[12].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
+                </Rectangle.Effect>
+            </Rectangle>
+            <TextBlock Foreground="{Binding _vmsLista[12].Color}" FontSize="13"  Text="{Binding _vmsLista[12].Contenido}">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[12].Color}" Direction="0" ShadowDepth="0" BlurRadius="55"/>
+
+                </TextBlock.Effect>
+
+            </TextBlock>
+            <TextBlock Foreground="{Binding _vmsLista[12].ColorClaro}" FontSize="13"  Text="{Binding _vmsLista[12].Contenido}">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[12].Color}" Direction="0" ShadowDepth="0" BlurRadius="79"/>
+                </TextBlock.Effect>
+            </TextBlock>
+        </Grid>
+        <Grid Canvas.Left="625" Canvas.Top="440" Height="65" Width="85">
+            <Rectangle Stroke="{Binding _vmsLista[13].ColorClaro}" StrokeThickness="3">
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[13].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
+                </Rectangle.Effect>
+            </Rectangle>
+            <Rectangle Stroke="{Binding _vmsLista[13].Color}" StrokeThickness="3" RadiusX="10" RadiusY="10">
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[13].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
+                </Rectangle.Effect>
+            </Rectangle>
+            <TextBlock Foreground="{Binding _vmsLista[13].Color}" FontSize="13"  Text="{Binding _vmsLista[13].Contenido}">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[13].Color}" Direction="0" ShadowDepth="0" BlurRadius="55"/>
+
+                </TextBlock.Effect>
+
+            </TextBlock>
+            <TextBlock Foreground="{Binding _vmsLista[13].ColorClaro}" FontSize="13"  Text="{Binding _vmsLista[13].Contenido}">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[13].Color}" Direction="0" ShadowDepth="0" BlurRadius="79"/>
+                </TextBlock.Effect>
+            </TextBlock>
+        </Grid>
+        <Grid Canvas.Left="370" Canvas.Top="445" Height="100" Width="65">
+            <Rectangle Stroke="{Binding _vmsLista[14].Color}" StrokeThickness="3">
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[14].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
+                </Rectangle.Effect>
+            </Rectangle>
+            <Rectangle Stroke="{Binding _vmsLista[14].ColorClaro}" StrokeThickness="3" RadiusX="10" RadiusY="10">
+                <Rectangle.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[14].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
+                </Rectangle.Effect>
+            </Rectangle>
+            <TextBlock Foreground="{Binding _vmsLista[14].Color}" FontSize="13"  Text="{Binding _vmsLista[14].Contenido}">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[14].Color}" Direction="0" ShadowDepth="0" BlurRadius="55"/>
+
+                </TextBlock.Effect>
+
+            </TextBlock>
+            <TextBlock Foreground="{Binding _vmsLista[14].ColorClaro}" FontSize="13"  Text="{Binding _vmsLista[14].Contenido}">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="{Binding _vmsLista[14].Color}" Direction="0" ShadowDepth="0" BlurRadius="79"/>
+                </TextBlock.Effect>
+            </TextBlock>
+        </Grid>
+
 
     </Canvas>
 </UserControl>

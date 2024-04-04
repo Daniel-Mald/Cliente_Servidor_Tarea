@@ -56,16 +56,16 @@ namespace VMS.ViewModels
         }
         void LlenarCarteles()
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 16; i++)
             {
               
                 VmsDTO x = new()
                 {
                     CartelId = i,
-                    Color = coloresReales["Rojo"][0],
-                    Contenido = "jamaica",
+                    Color = coloresReales["Morado"][0],
+                    Contenido = $"Disponible num. {i}",
                     Remitente = "",
-                    ColorClaro = coloresReales["Rojo"][1]
+                    ColorClaro = coloresReales["Morado"][1]
                     
                 };
                 _vmsLista.Add(x);
