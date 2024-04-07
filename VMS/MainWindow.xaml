@@ -8,7 +8,7 @@
         xmlns:views="clr-namespace:VMS.Views"
         Title="MainWindow" Height="670" Width="1000"  ResizeMode="NoResize" >
     <Grid>
-        <Image Source="Assets/fondo.png" Stretch="Fill" />
+        <Image Source="Assets/fondo2.png" Stretch="Fill" />
         <views:MainUserControl></views:MainUserControl>
     </Grid>
 </Window>

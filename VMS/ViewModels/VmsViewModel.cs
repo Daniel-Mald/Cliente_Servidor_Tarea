@@ -22,7 +22,15 @@ namespace VMS.ViewModels
         SoundPlayer _player;
         SoundPlayer _player2;
         SoundPlayer _player3;
-        int _numCarteles;
+        public string IP
+        {
+            get
+            {
+                return string.Join(",", Dns.GetHostAddresses(Dns.GetHostName()).
+                    Where(x => x.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork).
+                    Select(x => x.ToString()));
+            }
+        }
         private readonly Dictionary<string, string[]> coloresReales = new()
 {
     { "Rojo", new string[] { "#FF2E2E", "#FFE2E2" }},
@@ -33,16 +41,7 @@ namespace VMS.ViewModels
     { "Magenta", new string[] { "#FF2EFF", "#FFE2FF" }}
          ,{"Apagado", new string [] {"Black","Transparent"}}
 };
-
-        public string IP 
-        {
-            get
-            {
-                return string.Join(",", Dns.GetHostAddresses(Dns.GetHostName()).
-                    Where(x => x.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork).
-                    Select(x => x.ToString()));
-            }
-        }
+      
         public VmsViewModel()
         {
             _server = new VmsService();
@@ -64,7 +63,7 @@ namespace VMS.ViewModels
         private async void _timer_ElapsedAsync(object? sender, ElapsedEventArgs e)
         {
             _player3.Play();
-            int cartel = _random.Next(0, 16);
+            int cartel = _random.Next(1, 16);
             var cart = _vmsLista[cartel];
             string[] s = new string[] { cart.Color ,cart.ColorClaro };
 
