@@ -34,7 +34,8 @@
         </Style>
     </UserControl.Resources>
     <Canvas>
-        <Grid Canvas.Left="10" Canvas.Top="10" Height="200" Width="150">
+        <TextBlock Canvas.Left="370" Canvas.Top="-5">Conéctate con la IP: <Run Text="{Binding IP, Mode=OneWay}"></Run></TextBlock>
+            <Grid Canvas.Left="10" Canvas.Top="10" Height="200" Width="150">
             <Rectangle Stroke="{Binding _vmsLista[0].ColorClaro}">
                 <Rectangle.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[0].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
