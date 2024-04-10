@@ -4,7 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:VMS.Views"
-             xmlns:vm="clr-namespace:VMS.ViewModels"
+             xmlns:fa="clr-namespace:FontAwesome5;assembly=FontAwesome5"
+             xmlns:vm="clr-namespace:VMS.ViewModels" xmlns:fa1="http://schemas.fontawesome.com/icons/"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" >
     <UserControl.DataContext>
@@ -52,6 +53,13 @@
                 </TextBlock.Effect>
                 
             </TextBlock>
+
+            <fa1:SvgAwesome Icon="{Binding _vmsLista[0].Pictograma}" VerticalAlignment="Center" Margin="5" HorizontalAlignment="Center" Foreground="{Binding _vmsLista[0].Color}">
+
+                <fa1:SvgAwesome.Effect>
+                    <DropShadowEffect   Color="{Binding _vmsLista[0].Color}" Direction="0" ShadowDepth="0" BlurRadius="55" />
+                </fa1:SvgAwesome.Effect>
+            </fa1:SvgAwesome>
             <TextBlock Foreground="{Binding _vmsLista[0].ColorClaro}" FontSize="20" Text="{Binding IP}">
                 <TextBlock.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[0].Color}" Direction="0" ShadowDepth="0" BlurRadius="6"/>
@@ -76,6 +84,12 @@
                 </TextBlock.Effect>
 
             </TextBlock>
+            <fa1:SvgAwesome Icon="{Binding _vmsLista[1].Pictograma}" VerticalAlignment="Center" Margin="5" HorizontalAlignment="Center" Foreground="{Binding _vmsLista[1].Color}">
+
+                <fa1:SvgAwesome.Effect>
+                    <DropShadowEffect   Color="{Binding _vmsLista[1].Color}" Direction="0" ShadowDepth="0" BlurRadius="55" />
+                </fa1:SvgAwesome.Effect>
+            </fa1:SvgAwesome>
             <TextBlock Foreground="{Binding _vmsLista[1].ColorClaro}"  Text="{Binding _vmsLista[1].Contenido}">
                 <TextBlock.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[1].Color}" Direction="0" ShadowDepth="0" BlurRadius="6"/>
@@ -100,6 +114,12 @@
                 </TextBlock.Effect>
 
             </TextBlock>
+            <fa1:SvgAwesome Icon="{Binding _vmsLista[2].Pictograma}" VerticalAlignment="Center" Margin="5" HorizontalAlignment="Center" Foreground="{Binding _vmsLista[2].Color}">
+
+                <fa1:SvgAwesome.Effect>
+                    <DropShadowEffect   Color="{Binding _vmsLista[2].Color}" Direction="0" ShadowDepth="0" BlurRadius="55" />
+                </fa1:SvgAwesome.Effect>
+            </fa1:SvgAwesome>
             <TextBlock Foreground="{Binding _vmsLista[2].ColorClaro}" Text="{Binding _vmsLista[2].Contenido}">
                 <TextBlock.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[2].Color}" Direction="0" ShadowDepth="0" BlurRadius="6"/>
@@ -124,6 +144,12 @@
                 </TextBlock.Effect>
 
             </TextBlock>
+            <fa1:SvgAwesome Icon="{Binding _vmsLista[3].Pictograma}" VerticalAlignment="Center" Margin="5" HorizontalAlignment="Center" Foreground="{Binding _vmsLista[3].Color}">
+
+                <fa1:SvgAwesome.Effect>
+                    <DropShadowEffect   Color="{Binding _vmsLista[3].Color}" Direction="0" ShadowDepth="0" BlurRadius="55" />
+                </fa1:SvgAwesome.Effect>
+            </fa1:SvgAwesome>
             <TextBlock Foreground="{Binding _vmsLista[3].ColorClaro}" FontSize="20" Text="{Binding _vmsLista[3].Contenido}">
                 <TextBlock.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[3].Color}" Direction="0" ShadowDepth="0" BlurRadius="6"/>
@@ -148,6 +174,12 @@
                 </TextBlock.Effect>
 
             </TextBlock>
+            <fa1:SvgAwesome Icon="{Binding _vmsLista[4].Pictograma}" VerticalAlignment="Center" Margin="5" HorizontalAlignment="Center" Foreground="{Binding _vmsLista[4].Color}">
+
+                <fa1:SvgAwesome.Effect>
+                    <DropShadowEffect   Color="{Binding _vmsLista[4].Color}" Direction="0" ShadowDepth="0" BlurRadius="55" />
+                </fa1:SvgAwesome.Effect>
+            </fa1:SvgAwesome>
             <TextBlock Foreground="{Binding _vmsLista[4].ColorClaro}" FontSize="15" Margin="0" Text="{Binding _vmsLista[4].Contenido}">
                 <TextBlock.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[4].Color}" Direction="0" ShadowDepth="0" BlurRadius="6"/>
@@ -172,6 +204,13 @@
                 </TextBlock.Effect>
 
             </TextBlock>
+            
+            <fa1:SvgAwesome Icon="{Binding _vmsLista[5].Pictograma}" VerticalAlignment="Center" Margin="5" HorizontalAlignment="Center" Foreground="{Binding _vmsLista[5].Color}">
+
+                <fa1:SvgAwesome.Effect>
+                    <DropShadowEffect   Color="{Binding _vmsLista[5].Color}" Direction="0" ShadowDepth="0" BlurRadius="55" />
+                </fa1:SvgAwesome.Effect>
+            </fa1:SvgAwesome>
             <TextBlock Foreground="{Binding _vmsLista[5].ColorClaro}" FontSize="15" Margin="0" Text="{Binding _vmsLista[5].Contenido}">
                 <TextBlock.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[5].Color}" Direction="0" ShadowDepth="0" BlurRadius="6"/>
@@ -192,6 +231,12 @@
                 </TextBlock.Effect>
 
             </TextBlock>
+            <fa1:SvgAwesome Icon="{Binding _vmsLista[6].Pictograma}" VerticalAlignment="Center" Margin="5" HorizontalAlignment="Center" Foreground="{Binding _vmsLista[6].Color}">
+
+                <fa1:SvgAwesome.Effect>
+                    <DropShadowEffect   Color="{Binding _vmsLista[6].Color}" Direction="0" ShadowDepth="0" BlurRadius="55" />
+                </fa1:SvgAwesome.Effect>
+            </fa1:SvgAwesome>
             <TextBlock  Foreground="{Binding _vmsLista[6].ColorClaro}" FontSize="13" Margin="0" Text="{Binding _vmsLista[6].Contenido}">
                 <TextBlock.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[6].Color}" Direction="0" ShadowDepth="0" BlurRadius="55"/>
@@ -216,6 +261,12 @@
                 </TextBlock.Effect>
 
             </TextBlock>
+            <fa1:SvgAwesome Icon="{Binding _vmsLista[7].Pictograma}" VerticalAlignment="Center" Margin="5" HorizontalAlignment="Center" Foreground="{Binding _vmsLista[7].Color}">
+
+                <fa1:SvgAwesome.Effect>
+                    <DropShadowEffect   Color="{Binding _vmsLista[7].Color}" Direction="0" ShadowDepth="0" BlurRadius="55" />
+                </fa1:SvgAwesome.Effect>
+            </fa1:SvgAwesome>
             <TextBlock Foreground="{Binding _vmsLista[7].ColorClaro}" FontSize="15"  Text="{Binding _vmsLista[7].Contenido}">
                 <TextBlock.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[7].Color}" Direction="0" ShadowDepth="0" BlurRadius="6"/>
@@ -240,6 +291,12 @@
                 </TextBlock.Effect>
 
             </TextBlock>
+            <fa1:SvgAwesome Icon="{Binding _vmsLista[8].Pictograma}" VerticalAlignment="Center" Margin="5" HorizontalAlignment="Center" Foreground="{Binding _vmsLista[8].Color}">
+
+                <fa1:SvgAwesome.Effect>
+                    <DropShadowEffect   Color="{Binding _vmsLista[8].Color}" Direction="0" ShadowDepth="0" BlurRadius="55" />
+                </fa1:SvgAwesome.Effect>
+            </fa1:SvgAwesome>
             <TextBlock Foreground="{Binding _vmsLista[8].ColorClaro}" FontSize="15" Margin="0" Text="{Binding _vmsLista[8].Contenido}">
                 <TextBlock.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[8].Color}" Direction="0" ShadowDepth="0" BlurRadius="6"/>
@@ -264,6 +321,12 @@
                 </TextBlock.Effect>
 
             </TextBlock>
+            <fa1:SvgAwesome Icon="{Binding _vmsLista[9].Pictograma}" VerticalAlignment="Center" Margin="5" HorizontalAlignment="Center" Foreground="{Binding _vmsLista[9].Color}">
+
+                <fa1:SvgAwesome.Effect>
+                    <DropShadowEffect   Color="{Binding _vmsLista[9].Color}" Direction="0" ShadowDepth="0" BlurRadius="55" />
+                </fa1:SvgAwesome.Effect>
+            </fa1:SvgAwesome>
             <TextBlock Foreground="{Binding _vmsLista[9].ColorClaro}" FontSize="13"  Text="{Binding _vmsLista[9].Contenido}">
                 <TextBlock.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[9].Color}" Direction="0" ShadowDepth="0" BlurRadius="79"/>
@@ -288,6 +351,12 @@
                 </TextBlock.Effect>
 
             </TextBlock>
+            <fa1:SvgAwesome Icon="{Binding _vmsLista[10].Pictograma}" VerticalAlignment="Center" Margin="5" HorizontalAlignment="Center" Foreground="{Binding _vmsLista[10].Color}">
+
+                <fa1:SvgAwesome.Effect>
+                    <DropShadowEffect   Color="{Binding _vmsLista[10].Color}" Direction="0" ShadowDepth="0" BlurRadius="55" />
+                </fa1:SvgAwesome.Effect>
+            </fa1:SvgAwesome>
             <TextBlock Foreground="{Binding _vmsLista[10].ColorClaro}" FontSize="13"  Text="{Binding _vmsLista[10].Contenido}">
                 <TextBlock.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[10].Color}" Direction="0" ShadowDepth="0" BlurRadius="79"/>
@@ -295,26 +364,32 @@
             </TextBlock>
         </Grid>
         <Grid Canvas.Left="785" Canvas.Top="390" Height="130" Width="200">
-            <Rectangle Stroke="{Binding _vmsLista[9].ColorClaro}">
+            <Rectangle Stroke="{Binding _vmsLista[15].ColorClaro}">
                 <Rectangle.Effect>
-                    <DropShadowEffect Color="{Binding _vmsLista[9].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
+                    <DropShadowEffect Color="{Binding _vmsLista[15].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
                 </Rectangle.Effect>
             </Rectangle>
-            <Rectangle Stroke="{Binding _vmsLista[9].Color}" StrokeThickness="4" RadiusX="10" RadiusY="10">
+            <Rectangle Stroke="{Binding _vmsLista[15].Color}" StrokeThickness="4" RadiusX="10" RadiusY="10">
                 <Rectangle.Effect>
-                    <DropShadowEffect Color="{Binding _vmsLista[9].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
+                    <DropShadowEffect Color="{Binding _vmsLista[15].Color}"  BlurRadius="40" ShadowDepth="0"></DropShadowEffect>
                 </Rectangle.Effect>
             </Rectangle>
-            <TextBlock Foreground="{Binding _vmsLista[9].Color}" FontSize="13"  Text="{Binding _vmsLista[9].Contenido}">
+            <TextBlock Foreground="{Binding _vmsLista[15].Color}" FontSize="13"  Text="{Binding _vmsLista[15].Contenido}">
                 <TextBlock.Effect>
-                    <DropShadowEffect Color="{Binding _vmsLista[9].Color}" Direction="0" ShadowDepth="0" BlurRadius="55"/>
+                    <DropShadowEffect Color="{Binding _vmsLista[15].Color}" Direction="0" ShadowDepth="0" BlurRadius="55"/>
 
                 </TextBlock.Effect>
 
             </TextBlock>
-            <TextBlock Foreground="{Binding _vmsLista[9].ColorClaro}" FontSize="13"  Text="{Binding _vmsLista[9].Contenido}">
+            <fa1:SvgAwesome Icon="{Binding _vmsLista[15].Pictograma}" VerticalAlignment="Center" Margin="5" HorizontalAlignment="Center" Foreground="{Binding _vmsLista[15].Color}">
+
+                <fa1:SvgAwesome.Effect>
+                    <DropShadowEffect   Color="{Binding _vmsLista[15].Color}" Direction="0" ShadowDepth="0" BlurRadius="55" />
+                </fa1:SvgAwesome.Effect>
+            </fa1:SvgAwesome>
+            <TextBlock Foreground="{Binding _vmsLista[15].ColorClaro}" FontSize="13"  Text="{Binding _vmsLista[15].Contenido}">
                 <TextBlock.Effect>
-                    <DropShadowEffect Color="{Binding _vmsLista[9].Color}" Direction="0" ShadowDepth="0" BlurRadius="79"/>
+                    <DropShadowEffect Color="{Binding _vmsLista[15].Color}" Direction="0" ShadowDepth="0" BlurRadius="79"/>
                 </TextBlock.Effect>
             </TextBlock>
         </Grid>
@@ -336,6 +411,12 @@
                 </TextBlock.Effect>
 
             </TextBlock>
+            <fa1:SvgAwesome Icon="{Binding _vmsLista[11].Pictograma}" VerticalAlignment="Center" Margin="5" HorizontalAlignment="Center" Foreground="{Binding _vmsLista[11].Color}">
+
+                <fa1:SvgAwesome.Effect>
+                    <DropShadowEffect   Color="{Binding _vmsLista[11].Color}" Direction="0" ShadowDepth="0" BlurRadius="55" />
+                </fa1:SvgAwesome.Effect>
+            </fa1:SvgAwesome>
             <TextBlock Foreground="{Binding _vmsLista[11].ColorClaro}" FontSize="13"  Text="{Binding _vmsLista[11].Contenido}">
                 <TextBlock.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[11].Color}" Direction="0" ShadowDepth="0" BlurRadius="79"/>
@@ -360,6 +441,12 @@
                 </TextBlock.Effect>
 
             </TextBlock>
+            <fa1:SvgAwesome Icon="{Binding _vmsLista[12].Pictograma}" VerticalAlignment="Center" Margin="5" HorizontalAlignment="Center" Foreground="{Binding _vmsLista[12].Color}">
+
+                <fa1:SvgAwesome.Effect>
+                    <DropShadowEffect   Color="{Binding _vmsLista[12].Color}" Direction="0" ShadowDepth="0" BlurRadius="55" />
+                </fa1:SvgAwesome.Effect>
+            </fa1:SvgAwesome>
             <TextBlock Foreground="{Binding _vmsLista[12].ColorClaro}" FontSize="13"  Text="{Binding _vmsLista[12].Contenido}">
                 <TextBlock.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[12].Color}" Direction="0" ShadowDepth="0" BlurRadius="79"/>
@@ -384,6 +471,12 @@
                 </TextBlock.Effect>
 
             </TextBlock>
+            <fa1:SvgAwesome Icon="{Binding _vmsLista[13].Pictograma}" VerticalAlignment="Center" Margin="5" HorizontalAlignment="Center" Foreground="{Binding _vmsLista[13].Color}">
+
+                <fa1:SvgAwesome.Effect>
+                    <DropShadowEffect   Color="{Binding _vmsLista[13].Color}" Direction="0" ShadowDepth="0" BlurRadius="55" />
+                </fa1:SvgAwesome.Effect>
+            </fa1:SvgAwesome>
             <TextBlock Foreground="{Binding _vmsLista[13].ColorClaro}" FontSize="13"  Text="{Binding _vmsLista[13].Contenido}">
                 <TextBlock.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[13].Color}" Direction="0" ShadowDepth="0" BlurRadius="79"/>
@@ -408,6 +501,12 @@
                 </TextBlock.Effect>
 
             </TextBlock>
+            <fa1:SvgAwesome Icon="{Binding _vmsLista[14].Pictograma}" VerticalAlignment="Center" Margin="5" HorizontalAlignment="Center" Foreground="{Binding _vmsLista[14].Color}">
+
+                <fa1:SvgAwesome.Effect>
+                    <DropShadowEffect   Color="{Binding _vmsLista[14].Color}" Direction="0" ShadowDepth="0" BlurRadius="55" />
+                </fa1:SvgAwesome.Effect>
+            </fa1:SvgAwesome>
             <TextBlock Foreground="{Binding _vmsLista[14].ColorClaro}" FontSize="13"  Text="{Binding _vmsLista[14].Contenido}">
                 <TextBlock.Effect>
                     <DropShadowEffect Color="{Binding _vmsLista[14].Color}" Direction="0" ShadowDepth="0" BlurRadius="79"/>

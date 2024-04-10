@@ -65,7 +65,9 @@ namespace VMS.Services
                             Contenido = _diccionario["Contenido"] ?? "",
                             Color = _diccionario["Color"] ?? "#000",
                             CartelId = int.Parse(_diccionario["CartelId"] ?? "0"),
-                            Remitente = _context.Request.RemoteEndPoint.Address.ToString()
+                            Remitente = _context.Request.RemoteEndPoint.Address.ToString(),
+                            Pictograma = _diccionario["Pictograma"]??""
+
                         };
                         Application.Current.Dispatcher.Invoke(() =>
                         {

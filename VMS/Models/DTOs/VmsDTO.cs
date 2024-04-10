@@ -13,5 +13,6 @@ namespace VMS.Models.DTOs
         public int CartelId { get; set; }
         public string Remitente { get; set; } = "";
         public string ColorClaro { get; set; } = "";
+        public string Pictograma { get; set; } = "";
     }
 }

@@ -10,6 +10,8 @@ using VMS.Models.DTOs;
 using VMS.Services;
 using System.Timers;
 using System.Media;
+using System.Text.Json;
+using System.IO;
 
 namespace VMS.ViewModels
 {
@@ -41,7 +43,28 @@ namespace VMS.ViewModels
     { "Magenta", new string[] { "#FF2EFF", "#FFE2FF" }}
          ,{"Apagado", new string [] {"Black","Transparent"}}
 };
-      
+
+
+
+        private readonly Dictionary<string, string> _pictogramas = new()
+        {
+            {"Peligro","Solid_SkullCrossbones" },
+            {"No fumar","Solid_SmokingBan" },
+            {"Gato","Solid_Cat" },
+            {"Stop","Regular_StopCircle" },
+            {"Steam","Brands_Steam" },
+            {"Fantasma","Solid_Ghost" },
+            {"Oculto","Solid_EyeSlash" },
+            {"Wifi","Solid_Wifi" },
+            {"Incognito","Solid_UserSecret" },
+            {"Atencion","Solid_ExclamationCircle" },
+            {"Comida","Solid_Utensils" },
+            {"Microfono","Solid_Microphone" },
+            {"Gasolina","Solid_GasPump" },
+            {"Cuervo","Solid_Crow" },
+            {"","None" }
+
+        };
         public VmsViewModel()
         {
             _server = new VmsService();
@@ -63,7 +86,7 @@ namespace VMS.ViewModels
         private async void _timer_ElapsedAsync(object? sender, ElapsedEventArgs e)
         {
             _player3.Play();
-            int cartel = _random.Next(1, 16);
+            int cartel = _random.Next(1, 15);
             var cart = _vmsLista[cartel];
             string[] s = new string[] { cart.Color ,cart.ColorClaro };
 
@@ -93,6 +116,11 @@ namespace VMS.ViewModels
                 await Task.Delay(delay);
 
             }
+            if (_vmsLista[cartel].ColorClaro == "Black")
+            {
+                _vmsLista[cartel].ColorClaro = s[1];
+                _vmsLista[cartel].Color = s[0];
+            }
            //_player.Stop();
             //_player2.Stop();
             
@@ -108,7 +136,9 @@ namespace VMS.ViewModels
             //_vmsLista[e.CartelId].Color = coloresReales[e.Color][0];
             e.ColorClaro = coloresReales[e.Color][1];
             e.Color = coloresReales[e.Color][0];
+            
             _vmsLista[e.CartelId] = e;
+
             
         }
         void LlenarCarteles()
@@ -128,6 +158,31 @@ namespace VMS.ViewModels
                 _vmsLista.Add(x);
             }
         }
-        
+        private string _archivo = "data.json";
+        public void GuardadMensajes()
+        {
+            var json = JsonSerializer.Serialize(_vmsLista);
+            File.WriteAllText(_archivo, json);
+        }
+
+        public void CargarDatos()
+        {
+            if (File.Exists(_archivo))
+            {
+                var json = File.ReadAllText(_archivo);
+                var datos = JsonSerializer.Deserialize<ObservableCollection<VmsDTO>?>(json);
+                if (datos != null)
+                {
+
+                    _vmsLista = datos;
+                }
+                else
+                {
+                    _vmsLista = new ObservableCollection<VmsDTO>();
+
+                }
+            }
+        }
+
     }
 }
