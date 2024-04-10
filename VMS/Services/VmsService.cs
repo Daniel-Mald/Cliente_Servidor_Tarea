@@ -26,8 +26,6 @@ namespace VMS.Services
             if(!_listener.IsListening)
             {
                 _listener.Start();
-                
-
                 new Thread(Escuchar) { IsBackground = true}.Start();
             }
         }
