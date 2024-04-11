@@ -12,12 +12,14 @@ using System.Timers;
 using System.Media;
 using System.Text.Json;
 using System.IO;
+using VMS.Models;
 
 namespace VMS.ViewModels
 {
     public partial class VmsViewModel:ObservableObject
     {
         public ObservableCollection<VmsDTO> _vmsLista { get; set; } = new ObservableCollection<VmsDTO>();
+        CartelParpadeante[] _listaParpadeo;
         VmsService _server;
         System.Timers.Timer _timer;
         Random _random;
@@ -67,10 +69,20 @@ namespace VMS.ViewModels
         };
         public VmsViewModel()
         {
+            
             _server = new VmsService();
             _server.VmsRecibido += _server_VmsRecibido;
             _server.IniciarServer();
-            LlenarCarteles();
+            
+            CargarDatos();
+            _listaParpadeo = _vmsLista.Select(x => new CartelParpadeante
+            {
+                Color = x.Color,
+                ColorClaro = x.ColorClaro,
+                Id = x.CartelId,
+                Parpadeando = false
+            }).ToArray();
+
             _timer = new(5000);
             _player = new SoundPlayer("Assets/soundLight.wav");
             _player2 = new SoundPlayer("Assets/soundLight2.wav");
@@ -80,47 +92,60 @@ namespace VMS.ViewModels
             _random = new Random();
             _timer.Elapsed += _timer_ElapsedAsync;
             _timer.Start();
-           
+            _player3.Play();
+
         }
 
         private async void _timer_ElapsedAsync(object? sender, ElapsedEventArgs e)
         {
-            _player3.Play();
+            
             int cartel = _random.Next(1, 15);
-            var cart = _vmsLista[cartel];
-            string[] s = new string[] { cart.Color ,cart.ColorClaro };
-
-            int ii = _random.Next(1, 50);
-            int delay = _random.Next(50, 400);
-            if (ii % 2 == 0)
+            //VmsDTO? cartelQueParpadea = _listaParpadeo.Where(x => x.CartelId == cartel).FirstOrDefault();
+            
+            if (_listaParpadeo[cartel].Parpadeando == true)
             {
-                _player.Play();
+                return;
             }
             else
             {
-                _player2.Play();
-            }
-            for (int i = 0; i < ii; i++)
-            {
-                _vmsLista[cartel].ColorClaro = coloresReales["Apagado"][1];
-                _vmsLista[cartel].Color = coloresReales["Apagado"][0];
                 
-                OnPropertyChanged(nameof(_vmsLista));
-                
-                
-                await Task.Delay(delay);
+                    var cart = _vmsLista[cartel];
+                _listaParpadeo[cartel].Parpadeando = true;
 
-                _vmsLista[cartel].ColorClaro = s[1];
-                _vmsLista[cartel].Color = s[0];
-                OnPropertyChanged(nameof(_vmsLista));
-                await Task.Delay(delay);
+                int ii = _random.Next(1, 50);
+                int delay = _random.Next(50, 400);
+                if (ii % 2 == 0)
+                {
+                    _player.Play();
+                }
+                else
+                {
+                    _player2.Play();
+                }
+                for (int i = 0; i < ii; i++)
+                {
+                    _vmsLista[cartel].ColorClaro = coloresReales["Apagado"][1];
+                    _vmsLista[cartel].Color = coloresReales["Apagado"][0];
 
+                    OnPropertyChanged(nameof(_vmsLista));
+
+
+                    await Task.Delay(delay);
+                   
+                    
+                    _vmsLista[cartel].ColorClaro = _listaParpadeo[cartel].ColorClaro;
+                    _vmsLista[cartel].Color = _listaParpadeo[cartel].Color;
+
+
+
+                    OnPropertyChanged(nameof(_vmsLista));
+                    await Task.Delay(delay);
+
+                }
+
+                _listaParpadeo[cartel].Parpadeando = false;
             }
-            if (_vmsLista[cartel].ColorClaro == "Black")
-            {
-                _vmsLista[cartel].ColorClaro = s[1];
-                _vmsLista[cartel].Color = s[0];
-            }
+            
            //_player.Stop();
             //_player2.Stop();
             
@@ -136,8 +161,13 @@ namespace VMS.ViewModels
             //_vmsLista[e.CartelId].Color = coloresReales[e.Color][0];
             e.ColorClaro = coloresReales[e.Color][1];
             e.Color = coloresReales[e.Color][0];
-            
+
             _vmsLista[e.CartelId] = e;
+
+            _listaParpadeo[e.CartelId].ColorClaro = e.ColorClaro;
+            _listaParpadeo[e.CartelId].Color = e.Color;
+
+            GuardadMensajes();
 
             
         }
@@ -158,7 +188,7 @@ namespace VMS.ViewModels
                 _vmsLista.Add(x);
             }
         }
-        private string _archivo = "data.json";
+        private string _archivo = "../data.json";
         public void GuardadMensajes()
         {
             var json = JsonSerializer.Serialize(_vmsLista);
@@ -178,9 +208,14 @@ namespace VMS.ViewModels
                 }
                 else
                 {
-                    _vmsLista = new ObservableCollection<VmsDTO>();
+                    LlenarCarteles();
 
                 }
+            }
+            else
+            {
+                LlenarCarteles();
+                GuardadMensajes();
             }
         }
 
