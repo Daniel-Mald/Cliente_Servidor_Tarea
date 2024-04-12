@@ -4,12 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            background-color: #171C28;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 16px;
+            color: white;
+        }
+
+        form {
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #1B1735;
+            background: radial-gradient(circle farthest-side at center, #191935 0%, #22155A 100%);
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+            border: 5px solid #932EFF;
+        }
+
+        input[type="submit"] {
+            background-color: #2B313E;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        label, select, input {
+            font-weight: bold;
+            margin: 10px 0px 10px 0px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #932EFF;
+        }
+    </style>
 </head>
 <body>
     <form method="post" action="./cambiar">
-        <label>Cartel a elegir</label><br />
+        <label>Cartel a elegir:</label><br />
         <select name="CartelId">
-
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -25,11 +61,11 @@
             <option value="13">13</option>
             <option value="14">14</option>
             <option value="15">15</option>
-
         </select>
-        <label>Texto</label><br />
+        <br />
+        <label>Texto del cartel:</label><br />
         <input type="text" name="contenido" /><br />
-        <label>Color</label><br />
+        <label>Color del cartel:</label><br />
         <select name="color">
             <option value="Rojo">Rojo</option>
             <option value="Morado">Morado</option>
@@ -37,12 +73,9 @@
             <option value="Naranja">Naranja</option>
             <option value="Cian">Cian</option>
             <option value="Magenta">Magenta</option>
-
         </select>
-
         <br />
-        <br />
-        <label>Pictograma</label>
+        <label>Pictograma de fondo:</label>
         <select name="Pictograma">
             <option value="None">Ninguno</option>
             <option value="Solid_SkullCrossbones">Peligro</option>
@@ -59,12 +92,9 @@
             <option value="Solid_Microphone">Microfono</option>
             <option value="Solid_GasPump">Gasolina</option>
             <option value="Solid_Crow">Cuervo</option>
-
-
         </select>
         <br />
-        <input type="submit" value="Cambiar" /><br />
+        <input type="submit" value="Cambiar cartel" /><br />
     </form>
-   
 </body>
 </html>
