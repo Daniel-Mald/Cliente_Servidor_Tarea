@@ -204,7 +204,14 @@ namespace VMS.ViewModels
                 var datos = JsonSerializer.Deserialize<ObservableCollection<VmsDTO>?>(json);
                 if (datos != null)
                 {
-
+                    foreach (var item in datos)
+                    {
+                        if(item.Color == "Black")
+                        {
+                            item.Color = coloresReales["Morado"][0];
+                            item.ColorClaro = coloresReales["Morado"][1];
+                        }
+                    }
                     _vmsLista = datos;
                 }
                 else
