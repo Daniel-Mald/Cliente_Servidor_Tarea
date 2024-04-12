@@ -64,7 +64,7 @@ namespace VMS.ViewModels
             {"Microfono","Solid_Microphone" },
             {"Gasolina","Solid_GasPump" },
             {"Cuervo","Solid_Crow" },
-            {"","None" }
+            {"None","None" }
 
         };
         public VmsViewModel()
@@ -182,7 +182,8 @@ namespace VMS.ViewModels
                     Color = coloresReales["Morado"][0],
                     Contenido = $"Disponible num. {i}",
                     Remitente = "",
-                    ColorClaro = coloresReales["Morado"][1]
+                    ColorClaro = coloresReales["Morado"][1],
+                    Pictograma = "None"
                     
                 };
                 _vmsLista.Add(x);
